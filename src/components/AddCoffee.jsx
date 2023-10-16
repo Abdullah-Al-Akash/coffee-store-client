@@ -1,52 +1,106 @@
 import React from 'react';
 
 const AddCoffee = () => {
+
+    const handleCoffee = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const quantity = form.quantity.value;
+        const supplier = form.supplier.value;
+        const taste = form.taste.value;
+        const category = form.category.value;
+        const details = form.details.value;
+        const photo = form.photo.value;
+
+        const newCoffee = { name, quantity, supplier, taste, category, details, photo };
+
+        console.log(newCoffee);
+    }
     return (
-        <div className="mt-12 bg-orange-100 md:w-3/4  mx-auto rounded-md">
-            <div className="pt-12 pb-12">
-                <h2 className="text-3xl font-bold text-center pb-4">Add New Coffee</h2>
-                <form className="p-6">
-                    <div className="md:flex md:justify-center">
-                        <div className="">
-                            <h4 className="text-xl font-bold pb-3">Name</h4>
-                            <input type="text" placeholder="Enter Coffee Name" className="input input-bordered input-sm w-96" />
-                        </div>
-                        <div className="md:ps-24">
-                            <h4 className="text-xl font-bold pb-3">Chef</h4>
-                            <input type="text" placeholder="Enter Chef Name" className="input input-bordered input-sm w-96" />
-                        </div>
+        <div className="bg-[#F4F3F0] p-20">
+            <h1 className="text-3xl font-extrabold text-center mb-8">Add a Coffee</h1>
+            <form onSubmit={handleCoffee}>
+                {/* Row of Coffee Name and Quantity  */}
+                <div className="md:flex mb-8">
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Coffee Name</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="name" placeholder="Coffee Name" className="input input-bordered md:w-full" />
+                        </label>
                     </div>
-                    <div className="md:flex md:justify-center md:pt-7">
-                        <div className="">
-                            <h4 className="text-xl font-bold pb-3">Supplier</h4>
-                            <input type="text" placeholder="Enter Coffee Supplier" className="input input-bordered input-sm w-96" />
-                        </div>
-                        <div className="md:ps-24">
-                            <h4 className="text-xl font-bold pb-3">Taste</h4>
-                            <input type="text" placeholder="Enter Coffee Taste" className="input input-bordered input-sm w-96" />
-                        </div>
+                    <div className="form-control md:w-1/2 md:ml-4">
+                        <label className="label">
+                            <span className="label-text">Coffee Quantity</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="quantity" placeholder="Coffee Quantity" className="input input-bordered md:w-full" />
+                        </label>
                     </div>
-                    <div className="md:flex md:justify-center md:pt-7">
-                        <div className="">
-                            <h4 className="text-xl font-bold pb-3">Category</h4>
-                            <input type="text" placeholder="Enter Coffee Category" className="input input-bordered input-sm w-96" />
-                        </div>
-                        <div className="md:ps-24">
-                            <h4 className="text-xl font-bold pb-3">Details</h4>
-                            <input type="text" placeholder="Enter Coffee Details" className="input input-bordered input-sm w-96" />
-                        </div>
+                </div>
+                {/* Row of Coffee Supplier and Taste  */}
+                <div className="md:flex mb-8">
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Supplier</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="supplier" placeholder="Coffee Name" className="input input-bordered md:w-full" />
+                        </label>
                     </div>
-                    <div className=" md:pt-7">
-                        <div className="md:w-full md:flex md:justify-center">
-                            <h4 className="text-xl font-bold pb-3 md:pe-2">Photo URL</h4>
-                            <input type="text" placeholder="Enter Photo URL" className="input input-bordered input-sm md:w-8/12 w-96" />
-                        </div>
+                    <div className="form-control md:w-1/2 md:ml-4">
+                        <label className="label">
+                            <span className="label-text">Taste</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="taste" placeholder="Coffee Quantity" className="input input-bordered md:w-full" />
+                        </label>
                     </div>
-                    <div className="pt-5 w-full text-center">
-                        <button className="btn font-bold md:w-9/12 w-96 bg-orange-700 text-white hover:bg-orange-800">Add Coffee</button>
+                </div>
+                {/* Row of Coffee Category and Details  */}
+                <div className="md:flex mb-8">
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Category</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="category" placeholder="Coffee Name" className="input input-bordered md:w-full" />
+                        </label>
                     </div>
-                </form>
-            </div>
+                    <div className="form-control md:w-1/2 md:ml-4">
+                        <label className="label">
+                            <span className="label-text">Details</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="details" placeholder="Coffee Quantity" className="input input-bordered md:w-full" />
+                        </label>
+                    </div>
+                </div>
+                {/* Row of Coffee Name and Quantity  */}
+                <div className="md:flex mb-8">
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="photo" placeholder="Coffee Name" className="input input-bordered md:w-full" />
+                        </label>
+                    </div>
+                </div>
+                {/* Row of Coffee Name and Quantity  */}
+                <div className="md:flex mb-8">
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="submit" value="Add Coffee" className="input input-bordered md:w-full cursor-pointer bg-[#D2B48C] font-bold border-black" />
+                        </label>
+                    </div>
+                </div>
+            </form>
         </div>
     );
 };
